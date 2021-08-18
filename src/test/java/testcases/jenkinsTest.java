@@ -12,7 +12,9 @@ static WebDriver driver;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		/////git pat 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
 		
+		//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
 			//WebDriverManager.chromedriver().setup();
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\shyam\\java-selenium\\drivers\\chromedriver_win32\\chromedriver.exe");	
 			driver = new ChromeDriver();
