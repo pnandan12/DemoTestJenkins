@@ -1,39 +1,33 @@
 package testcases;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 
-
-
-public class jenkinsTest {
-static WebDriver driver;
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		/////git pat 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
-		
-		//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
+public class NewTest {
+	WebDriver driver;
+  @Test
+  public void f() {
+		 driver.findElement(By.id("firstName")).sendKeys("Praveen");
+		 driver.findElement(By.id("lastName")).sendKeys("kumar");
+		 driver.findElement(By.id("userEmail")).sendKeys("Praveen@kumar.com");
+  }
+  @BeforeTest
+public void setUp() {
 			//WebDriverManager.chromedriver().setup();
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\shyam\\java-selenium\\drivers\\chromedriver_win32\\chromedriver.exe");	
 			driver = new ChromeDriver();
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
 			driver.get("https://demoqa.com/automation-practice-form");
+  }
 
-	 driver.findElement(By.id("firstName")).sendKeys("Praveen");
-	 driver.findElement(By.id("lastName")).sendKeys("kumar");
-	 driver.findElement(By.id("userEmail")).sendKeys("Praveen@kumar.com");
-		
-			
-		
-	
-			driver.quit();
-		
-		
-
+  @AfterTest
+  public void teardown() {
+		driver.quit();
 	}
-	
 
 }
